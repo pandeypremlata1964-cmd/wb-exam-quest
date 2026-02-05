@@ -14,16 +14,321 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookmarks: {
+        Row: {
+          created_at: string
+          id: string
+          question_paper_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          question_paper_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          question_paper_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookmarks_question_paper_id_fkey"
+            columns: ["question_paper_id"]
+            isOneToOne: false
+            referencedRelation: "question_papers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mock_tests: {
+        Row: {
+          chapter: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          difficulty: string
+          duration: number
+          id: string
+          is_active: boolean | null
+          subject: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          chapter?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          difficulty?: string
+          duration?: number
+          id?: string
+          is_active?: boolean | null
+          subject: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          chapter?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          difficulty?: string
+          duration?: number
+          id?: string
+          is_active?: boolean | null
+          subject?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          course: string | null
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          semester: string | null
+          university: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          course?: string | null
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+          semester?: string | null
+          university?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          course?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          semester?: string | null
+          university?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      question_papers: {
+        Row: {
+          course: string
+          created_at: string
+          downloads: number | null
+          id: string
+          is_external_link: boolean | null
+          pdf_storage_path: string | null
+          pdf_url: string | null
+          semester: string
+          subject: string
+          university_id: string
+          updated_at: string
+          uploaded_by: string | null
+          year: number
+        }
+        Insert: {
+          course: string
+          created_at?: string
+          downloads?: number | null
+          id?: string
+          is_external_link?: boolean | null
+          pdf_storage_path?: string | null
+          pdf_url?: string | null
+          semester: string
+          subject: string
+          university_id: string
+          updated_at?: string
+          uploaded_by?: string | null
+          year: number
+        }
+        Update: {
+          course?: string
+          created_at?: string
+          downloads?: number | null
+          id?: string
+          is_external_link?: boolean | null
+          pdf_storage_path?: string | null
+          pdf_url?: string | null
+          semester?: string
+          subject?: string
+          university_id?: string
+          updated_at?: string
+          uploaded_by?: string | null
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "question_papers_university_id_fkey"
+            columns: ["university_id"]
+            isOneToOne: false
+            referencedRelation: "universities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questions: {
+        Row: {
+          correct_answer: number
+          created_at: string
+          explanation: string | null
+          id: string
+          mock_test_id: string
+          options: Json
+          order_index: number | null
+          question_text: string
+        }
+        Insert: {
+          correct_answer: number
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          mock_test_id: string
+          options?: Json
+          order_index?: number | null
+          question_text: string
+        }
+        Update: {
+          correct_answer?: number
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          mock_test_id?: string
+          options?: Json
+          order_index?: number | null
+          question_text?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "questions_mock_test_id_fkey"
+            columns: ["mock_test_id"]
+            isOneToOne: false
+            referencedRelation: "mock_tests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      test_attempts: {
+        Row: {
+          answers: Json
+          completed_at: string
+          id: string
+          mock_test_id: string
+          score: number
+          time_taken: number | null
+          total_questions: number
+          user_id: string
+        }
+        Insert: {
+          answers?: Json
+          completed_at?: string
+          id?: string
+          mock_test_id: string
+          score?: number
+          time_taken?: number | null
+          total_questions: number
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          completed_at?: string
+          id?: string
+          mock_test_id?: string
+          score?: number
+          time_taken?: number | null
+          total_questions?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "test_attempts_mock_test_id_fkey"
+            columns: ["mock_test_id"]
+            isOneToOne: false
+            referencedRelation: "mock_tests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      universities: {
+        Row: {
+          created_at: string
+          id: string
+          location: string
+          logo_url: string | null
+          name: string
+          short_name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          location: string
+          logo_url?: string | null
+          name: string
+          short_name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          location?: string
+          logo_url?: string | null
+          name?: string
+          short_name?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_admin_or_moderator: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +455,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+    },
   },
 } as const
