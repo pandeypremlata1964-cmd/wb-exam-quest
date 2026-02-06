@@ -178,12 +178,12 @@ export default function Papers() {
     <div className="space-y-4">
       <div>
         <label className="text-sm font-medium mb-2 block">University</label>
-        <Select value={filters.university} onValueChange={(v) => setFilters({ ...filters, university: v })}>
+        <Select value={filters.university || "all"} onValueChange={(v) => setFilters({ ...filters, university: v === "all" ? "" : v })}>
           <SelectTrigger>
             <SelectValue placeholder="All Universities" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Universities</SelectItem>
+            <SelectItem value="all">All Universities</SelectItem>
             {universities.map((u) => (
               <SelectItem key={u.id} value={u.id}>{u.short_name} - {u.name}</SelectItem>
             ))}
@@ -193,12 +193,12 @@ export default function Papers() {
 
       <div>
         <label className="text-sm font-medium mb-2 block">Course</label>
-        <Select value={filters.course} onValueChange={(v) => setFilters({ ...filters, course: v })}>
+        <Select value={filters.course || "all"} onValueChange={(v) => setFilters({ ...filters, course: v === "all" ? "" : v })}>
           <SelectTrigger>
             <SelectValue placeholder="All Courses" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Courses</SelectItem>
+            <SelectItem value="all">All Courses</SelectItem>
             {courses.map((c) => (
               <SelectItem key={c} value={c}>{c}</SelectItem>
             ))}
@@ -208,12 +208,12 @@ export default function Papers() {
 
       <div>
         <label className="text-sm font-medium mb-2 block">Subject</label>
-        <Select value={filters.subject} onValueChange={(v) => setFilters({ ...filters, subject: v })}>
+        <Select value={filters.subject || "all"} onValueChange={(v) => setFilters({ ...filters, subject: v === "all" ? "" : v })}>
           <SelectTrigger>
             <SelectValue placeholder="All Subjects" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Subjects</SelectItem>
+            <SelectItem value="all">All Subjects</SelectItem>
             {subjects.map((s) => (
               <SelectItem key={s} value={s}>{s}</SelectItem>
             ))}
@@ -223,12 +223,12 @@ export default function Papers() {
 
       <div>
         <label className="text-sm font-medium mb-2 block">Semester</label>
-        <Select value={filters.semester} onValueChange={(v) => setFilters({ ...filters, semester: v })}>
+        <Select value={filters.semester || "all"} onValueChange={(v) => setFilters({ ...filters, semester: v === "all" ? "" : v })}>
           <SelectTrigger>
             <SelectValue placeholder="All Semesters" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Semesters</SelectItem>
+            <SelectItem value="all">All Semesters</SelectItem>
             {semesters.map((s) => (
               <SelectItem key={s} value={s}>{s} Semester</SelectItem>
             ))}
@@ -238,12 +238,12 @@ export default function Papers() {
 
       <div>
         <label className="text-sm font-medium mb-2 block">Year</label>
-        <Select value={filters.year} onValueChange={(v) => setFilters({ ...filters, year: v })}>
+        <Select value={filters.year || "all"} onValueChange={(v) => setFilters({ ...filters, year: v === "all" ? "" : v })}>
           <SelectTrigger>
             <SelectValue placeholder="All Years" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Years</SelectItem>
+            <SelectItem value="all">All Years</SelectItem>
             {[2024, 2023, 2022, 2021, 2020].map((y) => (
               <SelectItem key={y} value={y.toString()}>{y}</SelectItem>
             ))}
