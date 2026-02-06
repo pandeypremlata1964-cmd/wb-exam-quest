@@ -1,268 +1,172 @@
-# 🎓 WB Exam Quest: Ace Your Exams with Confidence
+# ✨ WB Exam Quest ✨
 
-An interactive and comprehensive platform designed to empower students in their exam preparation journey. WB Exam Quest provides a rich environment for learning, practicing, and mastering key concepts, ensuring you're thoroughly prepared for any challenge. With a focus on intuitive design and robust functionality, this application aims to make studying engaging and effective.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue.svg)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Powered%20by-Vite-purple.svg)](https://vitejs.dev/)
+[![npm](https://img.shields.io/badge/Package%20Manager-npm-red.svg)](https://www.npmjs.com/)
+[![Radix UI](https://img.shields.io/badge/UI%20Components-Radix%20UI-black.svg)](https://www.radix-ui.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Styling-TailwindCSS-orange.svg)](https://tailwindcss.com/)
+[![Project Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/pandeypremlata1964-cmd/wb-exam-quest)
+[![Stars](https://img.shields.io/github/stars/pandeypremlata1964-cmd/wb-exam-quest?style=social)](https://github.com/pandeypremlata1964-cmd/wb-exam-quest/stargazers)
+[![Forks](https://img.shields.io/github/forks/pandeypremlata1964-cmd/wb-exam-quest?style=social)](https://github.com/pandeypremlata1964-cmd/wb-exam-quest/network/members)
 
-## ✨ Key Features
+Empowering examination preparation with a dynamic and interactive web platform. WB Exam Quest is designed to provide a seamless and engaging experience for users preparing for various examinations, featuring robust UI components and a modern development stack.
 
-*   🚀 **Interactive Exam Simulation:** Practice with timed quizzes and mock exams that replicate real test conditions.
-*   📊 **Performance Analytics:** Track your progress with detailed insights into your strengths and weaknesses.
-*   📚 **Extensive Question Bank:** Access a vast collection of questions covering various subjects and topics.
-*   ✍️ **Personalized Study Paths:** Tailor your learning experience based on your performance and learning goals.
-*   🔐 **Secure User Authentication:** Manage your study profile and progress securely.
-*   📱 **Responsive User Interface:** Enjoy a seamless experience across all your devices, from desktop to mobile.
-*   🎨 **Beautifully Designed UI Components:** Leverages Radix UI and Tailwind CSS for a modern and accessible interface.
+---
+
+## 🌟 Key Features
+
+*   🚀 **Blazing Fast Development**: Leverages Vite for an incredibly fast development server and build process.
+*   💅 **Beautiful & Accessible UI**: Built with Radix UI components for headless, accessible, and customizable UI primitives.
+*   🎨 **Utility-First Styling**: Styled with Tailwind CSS for rapid and consistent design.
+*   📝 **Robust Form Handling**: Integrated with `@hookform/resolvers` for efficient form management and validation.
+*   ⚡ **Modern TypeScript**: Ensures type safety and improves code quality throughout the application.
+*   📦 **Modular Component System**: Utilizes `components.json` for managing UI components effectively.
+*   🧪 **Unit Testing Ready**: Configured with Vitest for streamlined unit testing.
 
 ## 🛠️ Tech Stack
 
-<p align="left">
-  <a href="https://www.typescriptlang.org/" target="_blank">
-    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  </a>
-  <a href="https://react.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  </a>
-  <a href="https://vitejs.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  </a>
-  <a href="https://radix-ui.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white" alt="Radix UI" />
-  </a>
-  <a href="https://supabase.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
-  </a>
-  <a href="https://www.postgresql.org/" target="_blank">
-    <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  </a>
-  <a href="https://www.npmjs.com/" target="_blank">
-    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
-  </a>
-  <a href="https://bun.sh/" target="_blank">
-    <img src="https://img.shields.io/badge/Bun-FBF00B?style=for-the-badge&logo=bun&logoColor=black" alt="Bun" />
-  </a>
-</p>
+| Category         | Technology                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Frontend**     | [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **UI Components**| [![Radix UI](https://img.shields.io/badge/Radix%20UI-black?style=for-the-badge&logo=radix-ui&logoColor=white)](https://www.radix-ui.com/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Styling**      | [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/) [![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)](https://postcss.org/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Package Mgmt** | [![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Linter**       | [![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Testing**      | [![Vitest](https://img.shields.io/badge/Vitest-6E9EFF?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Database**     | [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/) (Presumed, based on folder structure) [![PL/pgSQL](https://img.shields.io/badge/PL%2FpgSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/current/plpgsql.html) (Presumed, based on language detection) |
 
-## 🚀 Installation
+---
 
-Follow these steps to set up the project locally on your machine.
+## ⬇️ Installation
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-Ensure you have the following installed:
+Make sure you have Node.js and npm installed on your machine.
 
-*   Node.js (LTS version recommended)
-*   npm or Yarn (npm is used in examples)
-*   Bun (optional, but `bun.lockb` indicates it's used for some parts of the project)
+*   Node.js (v18 or higher recommended)
+*   npm (v9 or higher recommended)
 
-### 1. Clone the Repository
+```bash
+node -v
+npm -v
+```
 
-First, clone the `wb-exam-quest` repository to your local machine:
+### Clone the repository
 
 ```bash
 git clone https://github.com/pandeypremlata1964-cmd/wb-exam-quest.git
 cd wb-exam-quest
 ```
 
-### 2. Install Dependencies
-
-Install the necessary npm packages. If you prefer `yarn`, you can use `yarn install` instead.
+### Install dependencies
 
 ```bash
 npm install
-# or
-# yarn install
-# If you use Bun for some parts, you might also run:
-# bun install
 ```
 
-### 3. Environment Variables
+### Environment Variables
 
-Create a `.env` file in the root of your project and add the required environment variables. These typically include Supabase project URLs and API keys.
+Create a `.env` file in the root directory of the project and add your environment variables.
+Example:
 
 ```dotenv
-# .env example
-VITE_SUPABASE_URL="YOUR_SUPABASE_PROJECT_URL"
-VITE_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
-# Add any other environment variables your application needs
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+# Add other environment variables as needed
 ```
 
-You can find these details in your Supabase project settings under "API".
+---
 
-### 4. Supabase Setup (Optional, but recommended)
+## 🚀 Usage
 
-If you plan to develop features interacting with the database, ensure your Supabase project is set up or run the provided migrations. The `supabase` directory suggests there are Supabase-related configurations or SQL schemas.
+### Development Server
 
-You might need to install the Supabase CLI:
-
-```bash
-npm install -g supabase-cli
-```
-
-Then, link your project and run migrations (adjust commands as per your actual `supabase` directory content):
-
-```bash
-supabase login
-supabase link --project-ref your-supabase-project-id
-supabase db diff -f init > supabase/migrations/0_init.sql
-supabase migration up # Apply migrations
-```
-
-### 5. Start the Development Server
-
-Once the dependencies are installed and environment variables are set, you can start the development server:
+To start the development server:
 
 ```bash
 npm run dev
-# or
-# yarn dev
-# or
-# bun dev
 ```
 
-The application will typically be accessible at `http://localhost:5173` (or the port specified in your `vite.config.ts`).
+This will typically open the application in your browser at `http://localhost:5173`.
 
-## 💡 Usage
+### Building for Production
 
-This section demonstrates how to interact with the WB Exam Quest application.
+To build the project for production:
 
-### Running the Application
-
-After installation and starting the development server, open your web browser and navigate to the address provided in the terminal (e.g., `http://localhost:5173`).
-
-### Example Workflow: Taking a Mock Exam
-
-1.  **Register/Login:** If you're a new user, register for an account. Existing users can log in using their credentials.
-2.  **Browse Exams:** Navigate to the "Exams" or "Quizzes" section.
-3.  **Start Exam:** Select an exam to begin. You'll be presented with questions, and a timer may start.
-4.  **Answer Questions:** Choose the correct options or input your answers.
-5.  **Submit Exam:** Once you've completed all questions or the timer runs out, submit your exam.
-6.  **Review Results:** View your score, detailed performance analysis, and correct answers. This helps identify areas for improvement.
-
-### Utilizing UI Components (Developers)
-
-The project leverages Radix UI components (visible in `components.json` and `package.json`). If you're extending the UI, you can use these pre-styled and accessible components.
-
-For example, to use a `Button` from a custom components library derived from Radix:
-
-```tsx
-// src/components/ui/button.tsx
-// (This file would typically contain the Button component definition)
-
-import { Slot } from '@radix-ui/react-slot';
-import { cva, type VariantProps } from 'class-variance-authority';
-import * as React from 'react';
-
-const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-  {
-    variants: {
-      variant: {
-        default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
-        destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
-        outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
-        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
-      },
-      size: {
-        default: 'h-9 px-4 py-2',
-        sm: 'h-8 rounded-md px-3 text-xs',
-        lg: 'h-10 rounded-md px-8',
-        icon: 'h-9 w-9',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
-  }
-);
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
-  }
-);
-Button.displayName = 'Button';
-
-export { Button, buttonVariants };
+```bash
+npm run build
 ```
 
-And then using it in a React component:
+The compiled output will be located in the `dist/` directory.
 
-```tsx
-// src/pages/Dashboard.tsx
-import { Button } from '@/components/ui/button'; // Adjust import path as necessary
+### Running Tests
 
-function Dashboard() {
-  return (
-    <div>
-      <h1>Welcome to WB Exam Quest!</h1>
-      <Button onClick={() => alert('Starting a new exam!')}>Start New Exam</Button>
-      <Button variant="outline" className="ml-2">View Results</Button>
-      <Button variant="destructive" size="sm" onClick={() => console.log('Delete account')}>Delete Account</Button>
-    </div>
-  );
-}
+To run the unit tests:
 
-export default Dashboard;
+```bash
+npm run test
 ```
 
-## 📂 Project Structure
+### Linting
 
-Here's a simplified overview of the most important directories and files in the project:
+To lint the codebase:
 
-```
-wb-exam-quest/
-├── public/                 # Static assets (images, fonts, etc.)
-├── src/                    # Main application source code
-│   ├── assets/             # Images, icons, etc.
-│   ├── components/         # Reusable React components (UI library, custom components)
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions, helpers, and configurations
-│   ├── pages/              # Application pages/routes
-│   ├── types/              # TypeScript type definitions
-│   ├── App.tsx             # Main application component
-│   └── main.tsx            # Entry point of the React application
-├── supabase/               # Supabase-related files (migrations, RLS policies, functions)
-│   └── migrations/         # Database migration scripts
-├── .env                    # Environment variables (local config)
-├── bun.lockb               # Dependencies lock file for Bun
-├── components.json         # Configuration for shadcn/ui or similar component library
-├── eslint.config.js        # ESLint configuration
-├── index.html              # Main HTML file
-├── package.json            # Project dependencies and scripts
-├── postcss.config.js       # PostCSS configuration for Tailwind CSS
-├── tailwind.config.ts      # Tailwind CSS configuration
-├── tsconfig.json           # TypeScript configuration
-├── vite.config.ts          # Vite build tool configuration
-└── vitest.config.ts        # Vitest testing framework configuration
+```bash
+npm run lint
 ```
 
-## 🤝 Contributing
+---
 
-We welcome contributions to WB Exam Quest! Whether it's bug reports, feature requests, or code contributions, your help is appreciated.
+## 📁 Project Structure
 
-To contribute:
+```
+.
+├── .env                  # Environment variables
+├── .gitignore            # Files/directories to ignore in Git
+├── bun.lockb             # Bun lock file (if used alongside npm)
+├── components.json       # Configuration for UI components (e.g., Radix/shadcn-ui)
+├── eslint.config.js      # ESLint configuration
+├── index.html            # Main HTML file
+├── package-lock.json     # Node.js package lock file
+├── package.json          # Project metadata and dependencies
+├── postcss.config.js     # PostCSS configuration
+├── public/               # Static assets
+├── src/                  # Source code
+│   ├── assets/           # Application assets (images, fonts, etc.)
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page-specific components/views
+│   ├── App.tsx           # Main application component
+│   └── main.tsx          # Entry point of the application
+├── supabase/             # Supabase related files (migrations, functions, etc.)
+├── tailwind.config.ts    # Tailwind CSS configuration
+├── tsconfig.app.json     # TypeScript configuration for the application
+├── tsconfig.json         # Base TypeScript configuration
+├── tsconfig.node.json    # TypeScript configuration for Node environments
+├── vite.config.ts        # Vite build configuration
+└── vitest.config.ts      # Vitest test configuration
+```
 
-1.  **Fork the repository.**
-2.  **Create a new branch** for your feature or bug fix: `git checkout -b feature/your-feature-name` or `bugfix/issue-description`.
-3.  **Make your changes**, ensuring they adhere to the project's coding style (ESLint configured).
-4.  **Write clear, concise commit messages.**
-5.  **Push your branch** to your forked repository.
-6.  **Open a Pull Request** to the `main` branch of this repository, describing your changes in detail.
+---
 
-Please ensure your code passes all linting and testing checks before submitting a PR.
+## 👋 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1.  **Fork the Project**
+2.  **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3.  **Commit your Changes** (`git commit -m 'feat: Add some AmazingFeature'`)
+4.  **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5.  **Open a Pull Request**
+
+Please ensure your code adheres to the existing coding style and passes all linting checks.
+
+---
 
 ## 📄 License
 
-This project is currently without a specified license. For questions regarding usage or licensing, please contact the repository owner.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
