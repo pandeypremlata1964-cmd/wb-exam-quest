@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/papers', label: 'Papers' },
   { href: '/mock-tests', label: 'Mock Tests' },
   { href: '/universities', label: 'Universities' },
+  { href: '/leaderboard', label: 'Leaderboard' },
 ];
 
 export function Header() {
@@ -75,9 +76,9 @@ export function Header() {
               </motion.div>
             </Button>
 
-            <Link to={user ? '/profile' : '/auth'} className="hidden md:block">
+            <Link to={user ? '/dashboard' : '/auth'} className="hidden md:block">
               <Button variant="default" size="sm" className="gradient-primary border-0">
-                {user ? (profile?.full_name?.split(' ')[0] || 'Profile') : 'Sign In'}
+                {user ? (profile?.full_name?.split(' ')[0] || 'Dashboard') : 'Sign In'}
               </Button>
             </Link>
 
@@ -117,9 +118,9 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link to={user ? '/profile' : '/auth'} onClick={() => setMobileMenuOpen(false)}>
+            <Link to={user ? '/dashboard' : '/auth'} onClick={() => setMobileMenuOpen(false)}>
               <Button variant="default" className="w-full mt-2 gradient-primary border-0">
-                {user ? 'My Profile' : 'Sign In'}
+                {user ? 'My Dashboard' : 'Sign In'}
               </Button>
             </Link>
           </nav>

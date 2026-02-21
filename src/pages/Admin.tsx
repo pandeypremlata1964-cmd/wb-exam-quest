@@ -13,6 +13,8 @@ import {
   X,
   Edit,
   Building,
+  TrendingUp,
+  Database,
 } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -25,6 +27,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { AnalyticsDashboard } from '@/components/admin/AnalyticsDashboard';
+import { BulkPaperUpload, QuestionBulkImport } from '@/components/admin/BulkImport';
 
 interface University {
   id: string;
@@ -82,6 +86,8 @@ export default function Admin() {
   const [paperDialogOpen, setPaperDialogOpen] = useState(false);
   const [testDialogOpen, setTestDialogOpen] = useState(false);
   const [questionDialogOpen, setQuestionDialogOpen] = useState(false);
+  const [bulkImportDialogOpen, setBulkImportDialogOpen] = useState(false);
+  const [bulkPaperUploadOpen, setBulkPaperUploadOpen] = useState(false);
   const [selectedTestId, setSelectedTestId] = useState<string | null>(null);
 
   // Form states
@@ -405,8 +411,12 @@ export default function Admin() {
         </div>
 
         {/* Tabs */}
-        <Tabs defaultValue="papers" className="w-full">
+        <Tabs defaultValue="analytics" className="w-full">
           <TabsList className="w-full justify-start bg-muted/50 p-1 mb-6 overflow-x-auto flex-nowrap">
+            <TabsTrigger value="analytics" className="shrink-0">
+              <TrendingUp className="h-4 w-4 mr-2" />
+              Analytics
+            </TabsTrigger>
             <TabsTrigger value="papers" className="shrink-0">
               <FileText className="h-4 w-4 mr-2" />
               Papers
@@ -423,10 +433,35 @@ export default function Admin() {
             )}
           </TabsList>
 
+          {/* Analytics Tab */}
+          <TabsContent value="analytics">
+            <AnalyticsDashboard />
+          </TabsContent>
+
           {/* Papers Tab */}
           <TabsContent value="papers">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Question Papers</h2>
+              <div className="flex gap-2">
+                <Dialog open={bulkPaperUploadOpen} onOpenChange={setBulkPaperUploadOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="outline">
+                      <Database className="h-4 w-4 mr-2" />
+                      Bulk Upload
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-lg">
+                    <DialogHeader>
+                      <DialogTitle>Bulk Paper Upload</DialogTitle>
+                    </DialogHeader>
+                    <div className="mt-4">
+                      <BulkPaperUpload
+                        universities={universities}
+                        onComplete={() => { setBulkPaperUploadOpen(false); fetchPapers(); fetchStats(); }}
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               <Dialog open={paperDialogOpen} onOpenChange={setPaperDialogOpen}>
                 <DialogTrigger asChild>
                   <Button className="gradient-primary border-0">
@@ -520,6 +555,7 @@ export default function Admin() {
                   </div>
                 </DialogContent>
               </Dialog>
+              </div>
             </div>
 
             <div className="space-y-3">
@@ -705,6 +741,23 @@ export default function Admin() {
               </DialogContent>
             </Dialog>
 
+            {/* Bulk Import Dialog */}
+            <Dialog open={bulkImportDialogOpen} onOpenChange={setBulkImportDialogOpen}>
+              <DialogContent className="max-w-lg">
+                <DialogHeader>
+                  <DialogTitle>Bulk Import Questions</DialogTitle>
+                </DialogHeader>
+                <div className="mt-4">
+                  {selectedTestId && (
+                    <QuestionBulkImport
+                      testId={selectedTestId}
+                      onComplete={() => { setBulkImportDialogOpen(false); fetchTests(); }}
+                    />
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <div className="space-y-3">
               {tests.map((test) => (
                 <div key={test.id} className="glass rounded-xl p-4 flex items-center justify-between">
@@ -720,6 +773,17 @@ export default function Admin() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => {
+                        setSelectedTestId(test.id);
+                        setBulkImportDialogOpen(true);
+                      }}
+                    >
+                      <Upload className="h-3 w-3 mr-1" />
+                      Import
+                    </Button>
                     <Button
                       size="sm"
                       variant="outline"

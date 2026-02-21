@@ -1,21 +1,32 @@
- import { Home, FileText, GraduationCap, User } from 'lucide-react';
+ import { Home, FileText, GraduationCap, Trophy, User } from 'lucide-react';
  import { Link, useLocation } from 'react-router-dom';
  import { motion } from 'framer-motion';
+ import { useAuth } from '@/hooks/useAuth';
  
  const navItems = [
    { href: '/', icon: Home, label: 'Home' },
    { href: '/papers', icon: FileText, label: 'Papers' },
    { href: '/mock-tests', icon: GraduationCap, label: 'Tests' },
-   { href: '/profile', icon: User, label: 'Profile' },
+   { href: '/leaderboard', icon: Trophy, label: 'Ranks' },
+   { href: '/dashboard', icon: User, label: 'Me', auth: true },
+   { href: '/profile', icon: User, label: 'Profile', auth: false },
  ];
  
  export function BottomNav() {
    const location = useLocation();
+   const { user } = useAuth();
+ 
+   const visibleItems = navItems.filter((item) => {
+     if ('auth' in item) {
+       return item.auth ? !!user : !user;
+     }
+     return true;
+   });
  
    return (
      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden glass-strong border-t border-border safe-bottom">
        <div className="flex items-center justify-around h-16 px-2">
-         {navItems.map((item) => {
+         {visibleItems.map((item) => {
            const isActive = location.pathname === item.href;
            const Icon = item.icon;
  

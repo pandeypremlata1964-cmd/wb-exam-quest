@@ -318,6 +318,40 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_admin_analytics: {
+        Args: never
+        Returns: {
+          avg_score: number
+          recent_attempts: number
+          recent_signups: number
+          total_attempts: number
+          total_bookmarks: number
+          total_papers: number
+          total_tests: number
+          total_users: number
+        }[]
+      }
+      get_leaderboard: {
+        Args: { _limit?: number; _subject?: string }
+        Returns: {
+          avatar_url: string
+          avg_score: number
+          full_name: string
+          total_score: number
+          total_tests: number
+          university: string
+          user_id: string
+        }[]
+      }
+      get_popular_subjects: {
+        Args: { _limit?: number }
+        Returns: {
+          attempt_count: number
+          paper_count: number
+          subject: string
+          test_count: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
