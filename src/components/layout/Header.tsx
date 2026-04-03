@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@/lib/theme';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
+import { AdvancedSearch } from '@/components/AdvancedSearch';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
