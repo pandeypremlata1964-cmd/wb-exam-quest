@@ -110,6 +110,9 @@ export function Header() {
           className="md:hidden glass-strong border-t border-border"
         >
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+            <div className="mb-2">
+              <AdvancedSearch />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
