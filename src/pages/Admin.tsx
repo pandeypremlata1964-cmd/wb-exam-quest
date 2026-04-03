@@ -429,9 +429,13 @@ export default function Admin() {
               <GraduationCap className="h-4 w-4 mr-2" />
               Tests
             </TabsTrigger>
+            <TabsTrigger value="moderation" className="shrink-0">
+              <ClipboardList className="h-4 w-4 mr-2" />
+              Moderation
+            </TabsTrigger>
             {isAdmin && (
               <TabsTrigger value="users" className="shrink-0">
-                <Users className="h-4 w-4 mr-2" />
+                <ShieldCheck className="h-4 w-4 mr-2" />
                 Users
               </TabsTrigger>
             )}
