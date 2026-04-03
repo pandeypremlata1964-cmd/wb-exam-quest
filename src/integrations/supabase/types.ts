@@ -88,12 +88,14 @@ export type Database = {
       profiles: {
         Row: {
           avatar_url: string | null
+          ban_reason: string | null
           bio: string | null
           course: string | null
           created_at: string
           email: string
           full_name: string | null
           id: string
+          is_banned: boolean
           semester: string | null
           university: string | null
           updated_at: string
@@ -101,12 +103,14 @@ export type Database = {
         }
         Insert: {
           avatar_url?: string | null
+          ban_reason?: string | null
           bio?: string | null
           course?: string | null
           created_at?: string
           email: string
           full_name?: string | null
           id?: string
+          is_banned?: boolean
           semester?: string | null
           university?: string | null
           updated_at?: string
@@ -114,12 +118,14 @@ export type Database = {
         }
         Update: {
           avatar_url?: string | null
+          ban_reason?: string | null
           bio?: string | null
           course?: string | null
           created_at?: string
           email?: string
           full_name?: string | null
           id?: string
+          is_banned?: boolean
           semester?: string | null
           university?: string | null
           updated_at?: string
@@ -137,6 +143,7 @@ export type Database = {
           pdf_storage_path: string | null
           pdf_url: string | null
           semester: string
+          status: string
           subject: string
           university_id: string
           updated_at: string
@@ -152,6 +159,7 @@ export type Database = {
           pdf_storage_path?: string | null
           pdf_url?: string | null
           semester: string
+          status?: string
           subject: string
           university_id: string
           updated_at?: string
@@ -167,6 +175,7 @@ export type Database = {
           pdf_storage_path?: string | null
           pdf_url?: string | null
           semester?: string
+          status?: string
           subject?: string
           university_id?: string
           updated_at?: string
