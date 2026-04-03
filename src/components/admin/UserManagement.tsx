@@ -101,7 +101,7 @@ export function UserManagement() {
       .from('user_roles')
       .delete()
       .eq('user_id', userId)
-      .eq('role', role);
+      .eq('role', role as 'admin' | 'moderator' | 'user');
     if (!error) {
       toast.success(`${role} role removed`);
       fetchUsers();
