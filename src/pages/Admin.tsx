@@ -819,35 +819,17 @@ export default function Admin() {
             </div>
           </TabsContent>
 
+          {/* Moderation Queue Tab */}
+          <TabsContent value="moderation">
+            <h2 className="text-xl font-semibold mb-4">Content Moderation Queue</h2>
+            <ModerationQueue />
+          </TabsContent>
+
           {/* Users Tab (Admin only) */}
           {isAdmin && (
             <TabsContent value="users">
-              <h2 className="text-xl font-semibold mb-4">Users</h2>
-              <div className="space-y-3">
-                {users.map((userData) => (
-                  <div key={userData.id} className="glass rounded-xl p-4 flex items-center justify-between">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-medium">{userData.full_name || 'No name'}</h3>
-                        {userData.user_roles?.map((r) => (
-                          <span key={r.role} className="px-2 py-0.5 text-xs rounded bg-primary/20 text-primary">
-                            {r.role}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-sm text-muted-foreground">{userData.email}</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Button size="sm" variant="outline" onClick={() => handleAssignRole(userData.id, 'moderator')}>
-                        Make Mod
-                      </Button>
-                      <Button size="sm" variant="outline" onClick={() => handleAssignRole(userData.id, 'admin')}>
-                        Make Admin
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-xl font-semibold mb-4">User Management</h2>
+              <UserManagement />
             </TabsContent>
           )}
         </Tabs>
