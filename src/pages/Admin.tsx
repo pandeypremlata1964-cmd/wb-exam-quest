@@ -15,6 +15,8 @@ import {
   Building,
   TrendingUp,
   Database,
+  ShieldCheck,
+  ClipboardList,
 } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -29,6 +31,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { AnalyticsDashboard } from '@/components/admin/AnalyticsDashboard';
 import { BulkPaperUpload, QuestionBulkImport } from '@/components/admin/BulkImport';
+import { UserManagement } from '@/components/admin/UserManagement';
+import { ModerationQueue } from '@/components/admin/ModerationQueue';
 
 interface University {
   id: string;
@@ -425,9 +429,13 @@ export default function Admin() {
               <GraduationCap className="h-4 w-4 mr-2" />
               Tests
             </TabsTrigger>
+            <TabsTrigger value="moderation" className="shrink-0">
+              <ClipboardList className="h-4 w-4 mr-2" />
+              Moderation
+            </TabsTrigger>
             {isAdmin && (
               <TabsTrigger value="users" className="shrink-0">
-                <Users className="h-4 w-4 mr-2" />
+                <ShieldCheck className="h-4 w-4 mr-2" />
                 Users
               </TabsTrigger>
             )}
@@ -811,35 +819,17 @@ export default function Admin() {
             </div>
           </TabsContent>
 
+          {/* Moderation Queue Tab */}
+          <TabsContent value="moderation">
+            <h2 className="text-xl font-semibold mb-4">Content Moderation Queue</h2>
+            <ModerationQueue />
+          </TabsContent>
+
           {/* Users Tab (Admin only) */}
           {isAdmin && (
             <TabsContent value="users">
-              <h2 className="text-xl font-semibold mb-4">Users</h2>
-              <div className="space-y-3">
-                {users.map((userData) => (
-                  <div key={userData.id} className="glass rounded-xl p-4 flex items-center justify-between">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-medium">{userData.full_name || 'No name'}</h3>
-                        {userData.user_roles?.map((r) => (
-                          <span key={r.role} className="px-2 py-0.5 text-xs rounded bg-primary/20 text-primary">
-                            {r.role}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-sm text-muted-foreground">{userData.email}</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Button size="sm" variant="outline" onClick={() => handleAssignRole(userData.id, 'moderator')}>
-                        Make Mod
-                      </Button>
-                      <Button size="sm" variant="outline" onClick={() => handleAssignRole(userData.id, 'admin')}>
-                        Make Admin
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-xl font-semibold mb-4">User Management</h2>
+              <UserManagement />
             </TabsContent>
           )}
         </Tabs>

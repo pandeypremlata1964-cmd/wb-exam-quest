@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@/lib/theme';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
+import { AdvancedSearch } from '@/components/AdvancedSearch';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
@@ -44,7 +45,7 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors
                   ${location.pathname === link.href 
                     ? 'bg-primary/10 text-primary' 
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
@@ -54,6 +55,11 @@ export function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Search */}
+          <div className="hidden md:block flex-1 max-w-sm mx-4">
+            <AdvancedSearch />
+          </div>
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
@@ -104,6 +110,9 @@ export function Header() {
           className="md:hidden glass-strong border-t border-border"
         >
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+            <div className="mb-2">
+              <AdvancedSearch />
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
