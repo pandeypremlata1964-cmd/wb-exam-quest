@@ -15,6 +15,8 @@ import {
   Building,
   TrendingUp,
   Database,
+  ShieldCheck,
+  ClipboardList,
 } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -29,6 +31,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { AnalyticsDashboard } from '@/components/admin/AnalyticsDashboard';
 import { BulkPaperUpload, QuestionBulkImport } from '@/components/admin/BulkImport';
+import { UserManagement } from '@/components/admin/UserManagement';
+import { ModerationQueue } from '@/components/admin/ModerationQueue';
 
 interface University {
   id: string;
