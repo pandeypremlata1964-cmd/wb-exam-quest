@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors
                   ${location.pathname === link.href 
                     ? 'bg-primary/10 text-primary' 
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
@@ -55,6 +55,11 @@ export function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Search */}
+          <div className="hidden md:block flex-1 max-w-sm mx-4">
+            <AdvancedSearch />
+          </div>
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
